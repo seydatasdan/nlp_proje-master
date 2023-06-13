@@ -129,5 +129,25 @@ print("Vektörlerin Şekli:", vectors.shape)
 print("Perplexity Değeri:", perplexity_value)
 
 
+# Adım 2 ?
+import numpy as np
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
 
+kelimeler = ['merhaba', 'dünya', 'python', 'programlama', 'öğreniyorum', 'veri', 'analizi', 'yapmak', 'iş', 'geliştirici',
+            'kitap', 'yazılım', 'proje', 'ödev', 'sınıf', 'öğrenci', 'okul', 'üniversite', 'öğretmen', 'öğrenmek',
+            'kodlama', 'hata', 'debug', 'algoritma', 'fonksiyon', 'değişken', 'liste', 'sözlük', 'döngü', 'koşul',
+            'modül', 'paket', 'dosya', 'okuma', 'yazma', 'yapı', 'metot', 'nesne', 'string', 'integer', 'float',
+            'boolean', 'tuple', 'index', 'karakter', 'liste', 'sözlük', 'hafıza', 'performans']
+
+frekans = {word: np.random.randint(1, 100) for word in kelimeler}
+
+# WordCloud oluşturun
+wordcloud = WordCloud(width=800, height=400, background_color='white').generate_from_frequencies(frekans)
+
+# WordCloud'u görselleştirin
+plt.figure(figsize=(10, 5))
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis('off')
+plt.show()
 
